@@ -7,19 +7,30 @@
  ******************************************************/
 
 var Dot = function(name, x, y) {
+    this.name = name;
     this.x = x;
     this.y = y;
-    var c = this.randomRGB(1);
-    this.colorH = c;
-    this.colorN = this.changeAlpha(c, 0.5);
-    this.name = name;
+
+    //!! colors
+    this.colorB = this.randomRGBA(1);    // border color
+    this.colorH = this.randomRGBA(1);    // hover color
+    this.colorN = this.changeAlpha(this.colorH, 0.5);
+    
+    //!! Root element
     this.root = document.createElement("div");
     this.root.innerHTML = name;
     this.root.className = "Dot";
+
+    //!! Append to the body
     document.body.appendChild(this.root);
 
+    //!! Border style
+    this.root.style.borderStyle = "dotted solid double dashed";
+    this.root.style.borderColor = this.colorB;
+    this.root.style.borderWidth = "2px";
+    
     //!! Text color
-    this.root.style.color = this.randomRGB(1);
+    this.root.style.color = this.randomRGBA(1);
 
     //!! Mouse Over
     this.root.onmouseover = () => {
@@ -38,6 +49,8 @@ var Dot = function(name, x, y) {
     this.setSize(20 + Math.random() * 20, 20 + Math.random() * 20);
 }
 
+
+//!! Set position
 Dot.prototype.setPosition = function (x, y) {
     var w = this.root.offsetWidth;
     var h = this.root.offsetHeight;
@@ -45,6 +58,7 @@ Dot.prototype.setPosition = function (x, y) {
     this.root.style.top  = y-h/2 + "px";
 }
 
+//!! Set size
 Dot.prototype.setSize = function(w, h) {
 
     //!! Width and Height
@@ -58,7 +72,8 @@ Dot.prototype.setSize = function(w, h) {
     this.root.style.borderRadius = ((w > h) ? w : h) + "px";
 }
 
-Dot.prototype.randomRGB = function(alpha) {
+//!! Random RGBA color
+Dot.prototype.randomRGBA = function(alpha) {
     var r = Math.floor(Math.random() * 255);
     var g = Math.floor(Math.random() * 255);
     var b = Math.floor(Math.random() * 255);
@@ -66,6 +81,7 @@ Dot.prototype.randomRGB = function(alpha) {
     return "rgba(" + r + "," + g + "," + b + "," + alpha + ")";
 }
 
+//!! Change alpha channel of RGBA
 Dot.prototype.changeAlpha = function(color, alpha) {
     color = color || "rgba(100, 100, 100, 1";
     alpha = alpha || 1;
@@ -73,3 +89,4 @@ Dot.prototype.changeAlpha = function(color, alpha) {
     var rgba = color.substring(0, idx + 1) + alpha + ")";
     return rgba;
 }
+//!! EOF

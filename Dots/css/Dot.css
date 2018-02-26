@@ -7,11 +7,11 @@ body{
     height: 1.5em;
     /* border-radius: 0.8em; */
     /* background-color: rgba(200, 200, 0, 0.5); */
-    border: 2px solid yellowgreen;
+    /* border: 2px solid yellowgreen; */
 
     /* line-height: 1.5em; */
     text-align: center;
-    color:rgb(6, 177, 245);
+    /* color:rgb(6, 177, 245); */
 }
 .Dot:hover{
     /* background-color: rgba(200, 200, 0, 0.7); */
