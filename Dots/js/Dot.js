@@ -1,3 +1,10 @@
+/******************************************************
+ * Create dots from div elements                      *
+ * Dr.Santi Nuratch                                   *
+ * Embedded Computing and Control Laboratory (ECC-Lab)*
+ * INC@KMUTT, Thailand                                *
+ * 26 February, 2018                                  *
+ ******************************************************/
 
 var Dot = function(name, x, y) {
     this.x = x;
