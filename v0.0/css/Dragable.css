@@ -1,0 +1,28 @@
+
+body{
+    background:url(../images/bg_grid.png);
+}
+
+.NodeContainer {
+    
+    position:absolute; 
+    border: 1px solid green;
+    background-color:rgba(0,100,0,0.5);
+    display:inline-block; 
+    border-radius:5px; 
+    box-shadow: 0px 2px 5px #000000;
+}
+
+.NodeContainer > header {
+    cursor: pointer;
+    user-select: none;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    color: orange;
+}
+
+.NodeContainer > header:hover {
+    color:orangered;  
+}

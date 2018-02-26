@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>DragObjects</title>
+        <script src="./js/Dragable.js"></script>
+        <link rel="stylesheet" href="./css/Dragable.css">
+    </head>
+    <body>
+    <script>
+        window.addEventListener("load", function (e) {
+
+            var obj1 = new Dragable("Node1");
+            var obj2 = new Dragable("Node2");
+            var obj3 = new Dragable("Node3");
+            var obj4 = new Dragable("Node4");
+
+            obj1.setPosition(Math.random() * 200, Math.random() * 300);
+            obj1.setWidth(50 + Math.random() * 100);
+
+            obj2.setPosition(Math.random() * 200, Math.random() * 300);
+            obj2.setWidth(50 + Math.random() * 100);
+
+            obj3.setPosition(Math.random() * 200, Math.random() * 300);
+            obj3.setWidth(50 + Math.random() * 100);
+
+            obj4.setPosition(Math.random() * 200, Math.random() * 300);
+            obj4.setWidth(50 + Math.random() * 100);
+        });
+    </script>
+    </body>
+</html>
