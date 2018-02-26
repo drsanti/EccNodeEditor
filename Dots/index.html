@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/Dot.css" />
+    <script src="./js/Dot.js"></script>
+</head>
+<body>
+    <div id="hint" style="color:aliceblue">Click anywhere to add a node</div>
+    <script>
+        window.onload = function() {
+
+            //!! Add a node when mouse down
+            window.addEventListener("mousedown", (e) =>{
+                e.preventDefault();
+                var d1 = new Dot(getChar(), e.pageX, e.pageY);
+            });
+
+            //!! Random a character
+            function getChar() {
+                var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                return chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+        }    
+    </script>
+</body>
+</html>
