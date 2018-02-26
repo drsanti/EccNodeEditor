@@ -38,7 +38,7 @@ var Dragable = function(name) {
 //!! Set node position
 Dragable.prototype.setPosition = function(x, y) {
     this.root.style.left = x + "px";
-	this.root.style.top  = y + "px";
+    this.root.style.top  = y + "px";
 }
 
 //!! Set node width
@@ -57,11 +57,11 @@ Dragable.prototype.onHeaderDown = function(e) {
 Dragable.prototype.onStartDraging = function(n, x, y) {
     if(this.dragMode != 0) 
         return;
-	this.dragMode = 1;
-	this.dragItem = n;
-	this.offsetX = n.offsetLeft - x;
-	this.offsetY = n.offsetTop - y;
-	window.addEventListener("mousemove", this.onObjectDraging.bind(this));
+    this.dragMode = 1;
+    this.dragItem = n;
+    this.offsetX = n.offsetLeft - x;
+    this.offsetY = n.offsetTop - y;
+    window.addEventListener("mousemove", this.onObjectDraging.bind(this));
     window.addEventListener("mouseup", this.onStopDraging.bind(this));
 }
 
@@ -69,18 +69,18 @@ Dragable.prototype.onStartDraging = function(n, x, y) {
 Dragable.prototype.onObjectDraging = function(e) {
     e.stopPropagation(); 
     e.preventDefault();
-	if(this.dragItem){
+    if(this.dragItem){
         this.dragItem.style.left = e.pageX + this.offsetX + "px";
         this.dragItem.style.top = e.pageY + this.offsetY + "px";
-	}
+    }
 }
 
 //!! Mouse Up (Stop draging)
 Dragable.prototype.onStopDraging = function(e) {
     e.stopPropagation(); 
     e.preventDefault();
-	this.dragItem = null;
-	this.dragMode = 0;
-	window.removeEventListener("mousemove", this.onObjectDraging);
-	window.removeEventListener("mouseup", this.onStopDraging);   
+    this.dragItem = null;
+    this.dragMode = 0;
+    window.removeEventListener("mousemove", this.onObjectDraging);
+    window.removeEventListener("mouseup", this.onStopDraging);   
 }
